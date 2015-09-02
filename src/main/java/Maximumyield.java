@@ -16,9 +16,21 @@ Two strip examples:
 		
 The output in console:
 
+Total should return 506 units
+The original mine is  147 206 52 240 300 
+The optimal is  0 206 0 0 300 
+
+Total should return 613 units
+The original mine is  206 140 300 52 107 
+The optimal is  206 0 300 0 107 
+
 Total should return 904 units
 The original mine is  147 206 52 240 300 1 20 398 
 The optimal is  0 206 0 0 300 0 0 398 
+
+Total should return 1011 units
+The original mine is  206 140 300 52 107 1 20 398 
+The optimal is  206 0 300 0 107 0 0 398 
 		
 *
 */
@@ -72,13 +84,8 @@ public class Maximumyield {
 		}
 
 	}
-
-	// main method
-	public static void main(String[] args) {
-		// test with a simple array
-		int[] n = {147, 206, 52, 240, 300, 1, 20, 398};
-
-
+	
+	public static void maxyield(int n[]){
 		result = new int[n.length];
 
 		for (int i = 0; i < result.length; i++) {
@@ -100,6 +107,21 @@ public class Maximumyield {
 		for (int i = 0; i < result.length; i++) {
 			System.out.print(result[i] + " ");
 		}
+		System.out.println("\n");
+	}
+
+	// main method
+	public static void main(String[] args) {
+		// test with a few simple arrays
+		int[] n1 = {147, 206, 52, 240, 300};
+		int[] n2 = {206, 140, 300, 52, 107};
+		int[] n3 = {147, 206, 52, 240, 300, 1, 20, 398};
+		int[] n4 = {206, 140, 300, 52, 107, 1, 20, 398};
+		
+		maxyield(n1);
+		maxyield(n2);
+		maxyield(n3);
+		maxyield(n4);
 
 	}
 }
