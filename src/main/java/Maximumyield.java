@@ -1,3 +1,6 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+ 
 /*
  * 6 - Maximum yield
 
@@ -85,16 +88,14 @@ public class Maximumyield {
 
 	}
 	
-	public static void maxyield(int n[]){
+	public void maxyield(int n[]){
 		result = new int[n.length];
 
 		for (int i = 0; i < result.length; i++) {
 			result[i] = 0;
 		}
 
-		Maximumyield maxyield = new Maximumyield();
-
-		System.out.println("Total should return " + maxyield.max(n) + " units");
+		System.out.println("Total should return " + max(n) + " units");
 
 		System.out.print("The original mine is  ");
 		for (int i = 0; i < n.length; i++) {
@@ -113,15 +114,18 @@ public class Maximumyield {
 	// main method
 	public static void main(String[] args) {
 		// test with a few simple arrays
+		Maximumyield maxyield = new Maximumyield();
+
 		int[] n1 = {147, 206, 52, 240, 300};
 		int[] n2 = {206, 140, 300, 52, 107};
 		int[] n3 = {147, 206, 52, 240, 300, 1, 20, 398};
 		int[] n4 = {206, 140, 300, 52, 107, 1, 20, 398};
 		
-		maxyield(n1);
-		maxyield(n2);
-		maxyield(n3);
-		maxyield(n4);
+		maxyield.maxyield(n1);
+		maxyield.maxyield(n2);
+		maxyield.maxyield(n3);
+		maxyield.maxyield(n4);
+		
 
 	}
 }
